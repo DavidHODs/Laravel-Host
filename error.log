@@ -1,15 +1,10 @@
-Errors found Sat Oct 29 05:06:07 PM WAT 2022
+Errors Found During Laravel Hosting Operation Sat Oct 29 05:42:21 PM WAT 2022
 +-------------------------------+
 
-Err:17 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
-Err:15 https://baltocdn.com/helm/stable/debian all InRelease
-Error: must run as root
-Err:13 https://baltocdn.com/helm/stable/debian all InRelease
-Err:18 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
-Err:13 https://baltocdn.com/helm/stable/debian all InRelease
-Err:18 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
-Error: must run as root
-Err:13 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
-Err:17 https://baltocdn.com/helm/stable/debian all InRelease
++-------------------------------+
+
+Errors Found During Laravel Hosting Operation Sat Oct 29 05:44:15 PM WAT 2022
++-------------------------------+
+
 +-------------------------------+
 

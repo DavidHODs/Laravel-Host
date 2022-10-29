@@ -22,10 +22,12 @@ function dependenciesInstallation {
     sudo chmod +x /usr/local/bin/composer
 }
 
+# loops through the packages in variable packages and installs them
 function packageInstallation {
     sudo apt-get install ${packages[@]} -y
 }
 
+# iniates the neccessary services of the packages installed
 function servicesIniation {
     sudo systemctl start apache2
     sudo systemctl status apache2
@@ -34,7 +36,9 @@ function servicesIniation {
     sudo systemctl status postgresql.service
 }
 
+# checks for errors in the logfile
 function errorReport {
+    cd /home/david/Desktop/AltSchool/2ndSemesterExam
     echo "Errors Found During Laravel Hosting Operation $(date)" >> ${errorLog}
     echo "+-------------------------------+" >> ${errorLog}
     echo >> ${errorLog}
@@ -45,9 +49,30 @@ function errorReport {
     echo >> ${errorLog}
 }
 
+# pulls the laravel app repo to be hosted into apache host directory
+# todo: check if altexam exists before operation.
+function apacheApp {
+    cd
+    mkdir AltExam
+    cd AltExam
+    git init
+    git remote add origin https://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@github.com/DavidHODs/laravel-realworld-example-app.git
+    git pull origin main
+    cd
+    sudo mv AltExam /var/www/html/
+    cd 
+    ls
+}
+
 packageUpdate >> ${log}
 dependenciesInstallation >> ${log}
 packageInstallation >> ${log}
 packageUpdate >> ${log}
 servicesIniation >> ${log}
+apacheApp >> ${log}
 errorReport
+
+# sudo -i 
+# su - postgres
+# psql
+# exit;
