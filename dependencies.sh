@@ -4,7 +4,7 @@
 packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'postgresql' 'postgresql-contrib')
 
 log=/home/david/Desktop/AltSchool/2ndSemesterExam/log.log
-
+errorLog=/home/david/Desktop/AltSchool/2ndSemesterExam/error.log
 
 # function to update all packages
 function packageUpdate {
@@ -34,8 +34,20 @@ function servicesIniation {
     sudo systemctl status postgresql.service
 }
 
+function errorReport {
+    echo "Errors Found During Laravel Hosting Operation $(date)" >> ${errorLog}
+    echo "+-------------------------------+" >> ${errorLog}
+    echo >> ${errorLog}
+
+    grep -i "err" log.log >> ${errorLog}
+    echo "+-------------------------------+" >> ${errorLog}
+
+    echo >> ${errorLog}
+}
+
 packageUpdate >> ${log}
 dependenciesInstallation >> ${log}
 packageInstallation >> ${log}
 packageUpdate >> ${log}
 servicesIniation >> ${log}
+errorReport
