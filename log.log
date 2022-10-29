@@ -1,0 +1,70 @@
+Hit:1 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
+Hit:2 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Hit:4 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Hit:6 http://nginx.org/packages/ubuntu jammy InRelease
+Ign:7 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:8 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Hit:9 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:10 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Ign:11 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:12 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Hit:14 https://apt.releases.hashicorp.com jammy InRelease
+Get:15 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Hit:16 https://download.docker.com/linux/ubuntu jammy InRelease
+Err:17 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+  404  Not Found [IP: 52.53.39.61 443]
+Hit:18 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Err:15 https://baltocdn.com/helm/stable/debian all InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
+Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
+Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20211016).
+lsb-release is already the newest version (11.1.0ubuntu4).
+software-properties-common is already the newest version (0.99.22.3).
+apt-transport-https is already the newest version (2.4.8).
+0 upgraded, 0 newly installed, 0 to remove and 48 not upgraded.
+Error: must run as root
+All settings correct for using Composer
+Downloading...
+
+Composer (version 2.4.4) successfully installed to: /home/david/Desktop/AltSchool/2ndSemesterExam/composer.phar
+Use it: php composer.phar
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+postgresql is already the newest version (14+238).
+postgresql-contrib is already the newest version (14+238).
+apache2 is already the newest version (2.4.52-1ubuntu4.1).
+git is already the newest version (1:2.34.1-1ubuntu1.5).
+php8.1-curl is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+php8.1-pgsql is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+php8.1-xml is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+0 upgraded, 0 newly installed, 0 to remove and 48 not upgraded.
+Hit:2 http://nginx.org/packages/ubuntu jammy InRelease
+Hit:3 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Ign:5 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:6 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:7 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
+Hit:9 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Hit:10 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Hit:1 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Hit:11 https://apt.releases.hashicorp.com jammy InRelease
+Hit:12 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Get:13 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Hit:14 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Ign:15 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:16 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Hit:17 https://download.docker.com/linux/ubuntu jammy InRelease
+Err:13 https://baltocdn.com/helm/stable/debian all InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
+Err:18 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+  404  Not Found [IP: 52.53.39.61 443]
+Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
+Reading package lists...
