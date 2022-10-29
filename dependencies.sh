@@ -26,7 +26,16 @@ function packageInstallation {
     sudo apt-get install ${packages[@]} -y
 }
 
+function servicesIniation {
+    sudo systemctl start apache2
+    sudo systemctl status apache2
+    sudo ufw allow 'Apache'
+    sudo systemctl start postgresql.service
+    sudo systemctl status postgresql.service
+}
+
 packageUpdate >> ${log}
 dependenciesInstallation >> ${log}
 packageInstallation >> ${log}
 packageUpdate >> ${log}
+servicesIniation >> ${log}

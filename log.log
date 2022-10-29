@@ -1,24 +1,24 @@
-Hit:1 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
-Hit:2 https://dl.google.com/linux/chrome/deb stable InRelease
-Hit:3 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
-Hit:4 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
-Hit:6 http://nginx.org/packages/ubuntu jammy InRelease
-Ign:7 https://pkg.jenkins.io/debian-stable binary/ InRelease
-Hit:8 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
-Hit:9 https://pkg.jenkins.io/debian-stable binary/ Release
-Hit:10 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
-Ign:11 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
-Hit:12 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
-Hit:14 https://apt.releases.hashicorp.com jammy InRelease
-Get:15 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
-Hit:16 https://download.docker.com/linux/ubuntu jammy InRelease
-Err:17 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+Hit:2 http://nginx.org/packages/ubuntu jammy InRelease
+Hit:3 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
+Hit:4 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Ign:6 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:7 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Hit:8 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:9 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Hit:10 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Get:11 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Hit:1 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Ign:13 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:14 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:15 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Hit:16 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Hit:17 https://apt.releases.hashicorp.com jammy InRelease
+Err:18 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
   404  Not Found [IP: 52.53.39.61 443]
-Hit:18 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
-Err:15 https://baltocdn.com/helm/stable/debian all InRelease
+Err:11 https://baltocdn.com/helm/stable/debian all InRelease
   The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
 Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
-Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -46,25 +46,56 @@ php8.1-curl is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1
 php8.1-pgsql is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
 php8.1-xml is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
 0 upgraded, 0 newly installed, 0 to remove and 48 not upgraded.
+Hit:1 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
 Hit:2 http://nginx.org/packages/ubuntu jammy InRelease
 Hit:3 https://dl.google.com/linux/chrome/deb stable InRelease
 Hit:4 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
-Ign:5 https://pkg.jenkins.io/debian-stable binary/ InRelease
-Hit:6 https://pkg.jenkins.io/debian-stable binary/ Release
-Hit:7 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
-Hit:9 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
-Hit:10 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
-Hit:1 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
-Hit:11 https://apt.releases.hashicorp.com jammy InRelease
-Hit:12 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
-Get:13 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
-Hit:14 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
-Ign:15 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
-Hit:16 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
-Hit:17 https://download.docker.com/linux/ubuntu jammy InRelease
-Err:13 https://baltocdn.com/helm/stable/debian all InRelease
+Hit:6 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Ign:7 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:8 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:9 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Hit:10 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Get:12 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Hit:13 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Ign:14 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Err:12 https://baltocdn.com/helm/stable/debian all InRelease
   The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
-Err:18 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+Hit:15 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Err:16 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
   404  Not Found [IP: 52.53.39.61 443]
+Hit:17 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:18 https://apt.releases.hashicorp.com jammy InRelease
 Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
 Reading package lists...
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; disabled; vendor preset: enabled)
+     Active: active (running) since Sat 2022-10-29 16:48:01 WAT; 2min 23s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 58955 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 58959 (apache2)
+      Tasks: 6 (limit: 9306)
+     Memory: 12.3M
+        CPU: 73ms
+     CGroup: /system.slice/apache2.service
+             ├─58959 /usr/sbin/apache2 -k start
+             ├─58963 /usr/sbin/apache2 -k start
+             ├─58964 /usr/sbin/apache2 -k start
+             ├─58965 /usr/sbin/apache2 -k start
+             ├─58966 /usr/sbin/apache2 -k start
+             └─58967 /usr/sbin/apache2 -k start
+
+Oct 29 16:48:01 EliteBook systemd[1]: Starting The Apache HTTP Server...
+Oct 29 16:48:01 EliteBook apachectl[58958]: AH00112: Warning: DocumentRoot [/var/www/html/myapp/public] does not exist
+Oct 29 16:48:01 EliteBook apachectl[58958]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Oct 29 16:48:01 EliteBook systemd[1]: Started The Apache HTTP Server.
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+● postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Sat 2022-10-29 14:28:51 WAT; 2h 21min ago
+   Main PID: 2107 (code=exited, status=0/SUCCESS)
+        CPU: 2ms
+
+Oct 29 14:28:51 EliteBook systemd[1]: Starting PostgreSQL RDBMS...
+Oct 29 14:28:51 EliteBook systemd[1]: Finished PostgreSQL RDBMS.
