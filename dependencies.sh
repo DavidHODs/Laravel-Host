@@ -3,8 +3,10 @@
 #list of packages needed
 packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'postgresql' 'postgresql-contrib')
 
-log=/home/david/Desktop/AltSchool/2ndSemesterExam/log.log
-errorLog=/home/david/Desktop/AltSchool/2ndSemesterExam/error.log
+log=~/Desktop/AltSchool/2ndSemesterExam/log.log
+errorLog=~/Desktop/AltSchool/2ndSemesterExam/error.log
+host=$(hostname -I)
+key=$(< ~/Desktop/AltSchool/.key)
 
 # function to update all packages
 function packageUpdate {
@@ -39,29 +41,52 @@ function servicesIniation {
 # checks for errors in the logfile
 function errorReport {
     cd /home/david/Desktop/AltSchool/2ndSemesterExam
-    echo "Errors Found During Laravel Hosting Operation $(date)" >> ${errorLog}
-    echo "+-------------------------------+" >> ${errorLog}
-    echo >> ${errorLog}
+    if grep -i "error" log.log; then
+        echo "Errors Found During Laravel Hosting Operation $(date) for ${host}" >> ${errorLog}
+        echo "+-------------------------------+" >> ${errorLog}
+        echo >> ${errorLog}
 
-    grep -i "err" log.log >> ${errorLog}
-    echo "+-------------------------------+" >> ${errorLog}
+        grep -i "error" log.log >> ${errorLog}
+        echo "+-------------------------------+" >> ${errorLog}
 
-    echo >> ${errorLog}
+        echo >> ${errorLog}
+    fi
 }
 
-# pulls the laravel app repo to be hosted into apache host directory
-# todo: check if altexam exists before operation.
-function apacheApp {
-    cd
-    mkdir AltExam
+# pulls and moves the laravel app repo to be hosted into apache host directory
+function gitOp {
+    # checks if AltExam folder does not exist before creating it
+    cd ~
+    if [ ! -d AltExam ]; then
+        mkdir AltExam
+    fi
+
     cd AltExam
-    git init
-    git remote add origin https://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@github.com/DavidHODs/laravel-realworld-example-app.git
+
+    # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
+    if ! git remote -v; then
+        git init
+        git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
+    else
+        if ! git ls-remote --exit-code https://${key}@github.com/DavidHODs/altschool-cloud-exercises-.git; then 
+            # removes origin and clears the contents of AltExam 
+            git remote rm origin
+            rm -rf ~/AltExam/{*,.*}
+            git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
+        fi
+    fi
+ 
+    # pulls the laravel content repo
     git pull origin main
-    cd
-    sudo mv AltExam /var/www/html/
-    cd 
-    ls
+    cd ~
+
+    # checks if AltEXam folder exists in apache html directory before deleting it
+    if [ -d /var/www/html/AltExam ]; then
+        sudo rm -rfv /var/www/html/AltExam
+    fi
+    
+    # moves AltExam folder containing the app to be hosted into apache html directory
+    sudo mv AltExam /var/www/html/ 
 }
 
 packageUpdate >> ${log}
@@ -69,7 +94,7 @@ dependenciesInstallation >> ${log}
 packageInstallation >> ${log}
 packageUpdate >> ${log}
 servicesIniation >> ${log}
-apacheApp >> ${log}
+gitOp >> ${log}
 errorReport
 
 # sudo -i 

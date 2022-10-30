@@ -1,59 +1,380 @@
-Reinitialized existing Git repository in /home/david/AltExam/.git/
-Already up to date.
-AltExam
-ansible
-aws
-aws-elastic-beanstalk-cli-setup
-bsc
-Calibre Library
-cri-dockerd
-dead.letter
-Desktop
-Documents
-Downloads
-first sem course  allocation adjusted.docx
-gitlab
-go
-hello-world
-ISO
-istio-1.14.3
-Messages
-migrate
-more-than-a-battle-en.pdf
-Music
-Personal
-Pictures
-Project
-Public
-snap
-Templates
-Videos
-WhatsApp
-ansible
-aws
-aws-elastic-beanstalk-cli-setup
-bsc
-Calibre Library
-cri-dockerd
-dead.letter
-Desktop
-Documents
-Downloads
-first sem course  allocation adjusted.docx
-gitlab
-go
-hello-world
-ISO
-istio-1.14.3
-Messages
-migrate
-more-than-a-battle-en.pdf
-Music
-Personal
-Pictures
-Project
-Public
-snap
-Templates
-Videos
-WhatsApp
+Hit:1 http://nginx.org/packages/ubuntu jammy InRelease
+Hit:2 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
+Hit:3 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:4 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Hit:6 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Ign:8 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:9 https://apt.releases.hashicorp.com jammy InRelease
+Hit:10 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Hit:11 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:12 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Ign:14 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:15 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Err:16 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+  404  Not Found [IP: 52.53.39.61 443]
+Get:17 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Err:17 https://baltocdn.com/helm/stable/debian all InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
+Hit:7 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Hit:18 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20211016).
+lsb-release is already the newest version (11.1.0ubuntu4).
+software-properties-common is already the newest version (0.99.22.3).
+apt-transport-https is already the newest version (2.4.8).
+0 upgraded, 0 newly installed, 0 to remove and 48 not upgraded.
+Error: must run as root
+All settings correct for using Composer
+Downloading...
+
+Composer (version 2.4.4) successfully installed to: /home/david/Desktop/AltSchool/2ndSemesterExam/composer.phar
+Use it: php composer.phar
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+postgresql is already the newest version (14+238).
+postgresql-contrib is already the newest version (14+238).
+apache2 is already the newest version (2.4.52-1ubuntu4.1).
+git is already the newest version (1:2.34.1-1ubuntu1.5).
+php8.1-curl is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+php8.1-pgsql is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+php8.1-xml is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+0 upgraded, 0 newly installed, 0 to remove and 48 not upgraded.
+Hit:1 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
+Hit:2 http://nginx.org/packages/ubuntu jammy InRelease
+Hit:3 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Hit:4 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:5 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Hit:7 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:8 https://apt.releases.hashicorp.com jammy InRelease
+Hit:9 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Ign:10 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:11 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Ign:12 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:13 https://pkg.jenkins.io/debian-stable binary/ Release
+Err:15 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+  404  Not Found [IP: 52.53.39.61 443]
+Get:16 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Err:16 https://baltocdn.com/helm/stable/debian all InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
+Hit:17 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Hit:6 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Hit:18 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
+Reading package lists...
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; disabled; vendor preset: enabled)
+     Active: active (running) since Sun 2022-10-30 18:49:43 WAT; 17min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 87791 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 87802 (apache2)
+      Tasks: 6 (limit: 9306)
+     Memory: 18.0M
+        CPU: 141ms
+     CGroup: /system.slice/apache2.service
+             ├─87802 /usr/sbin/apache2 -k start
+             ├─87806 /usr/sbin/apache2 -k start
+             ├─87807 /usr/sbin/apache2 -k start
+             ├─87808 /usr/sbin/apache2 -k start
+             ├─87809 /usr/sbin/apache2 -k start
+             └─87810 /usr/sbin/apache2 -k start
+
+Oct 30 18:49:42 EliteBook systemd[1]: Starting The Apache HTTP Server...
+Oct 30 18:49:43 EliteBook apachectl[87801]: AH00112: Warning: DocumentRoot [/var/www/html/myapp/public] does not exist
+Oct 30 18:49:43 EliteBook apachectl[87801]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Oct 30 18:49:43 EliteBook systemd[1]: Started The Apache HTTP Server.
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+● postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Sun 2022-10-30 15:59:21 WAT; 3h 7min ago
+    Process: 1714 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 1714 (code=exited, status=0/SUCCESS)
+        CPU: 1ms
+
+Oct 30 15:59:21 EliteBook systemd[1]: Starting PostgreSQL RDBMS...
+Oct 30 15:59:21 EliteBook systemd[1]: Finished PostgreSQL RDBMS.
+Initialized empty Git repository in /home/david/AltExam/.git/
+removed '/var/www/html/AltExam/phpstan.neon'
+removed '/var/www/html/AltExam/.gitattributes'
+removed '/var/www/html/AltExam/composer.json'
+removed '/var/www/html/AltExam/phpunit.xml'
+removed '/var/www/html/AltExam/resources/css/app.css'
+removed directory '/var/www/html/AltExam/resources/css'
+removed '/var/www/html/AltExam/resources/js/app.js'
+removed '/var/www/html/AltExam/resources/js/bootstrap.js'
+removed directory '/var/www/html/AltExam/resources/js'
+removed '/var/www/html/AltExam/resources/views/vendor/l5-swagger/.gitkeep'
+removed '/var/www/html/AltExam/resources/views/vendor/l5-swagger/index.blade.php'
+removed directory '/var/www/html/AltExam/resources/views/vendor/l5-swagger'
+removed directory '/var/www/html/AltExam/resources/views/vendor'
+removed '/var/www/html/AltExam/resources/views/welcome.blade.php'
+removed directory '/var/www/html/AltExam/resources/views'
+removed directory '/var/www/html/AltExam/resources'
+removed '/var/www/html/AltExam/bootstrap/cache/.gitignore'
+removed directory '/var/www/html/AltExam/bootstrap/cache'
+removed '/var/www/html/AltExam/bootstrap/app.php'
+removed directory '/var/www/html/AltExam/bootstrap'
+removed '/var/www/html/AltExam/config/auth.php'
+removed '/var/www/html/AltExam/config/sanctum.php'
+removed '/var/www/html/AltExam/config/broadcasting.php'
+removed '/var/www/html/AltExam/config/mail.php'
+removed '/var/www/html/AltExam/config/cors.php'
+removed '/var/www/html/AltExam/config/cache.php'
+removed '/var/www/html/AltExam/config/view.php'
+removed '/var/www/html/AltExam/config/jwt.php'
+removed '/var/www/html/AltExam/config/logging.php'
+removed '/var/www/html/AltExam/config/database.php'
+removed '/var/www/html/AltExam/config/services.php'
+removed '/var/www/html/AltExam/config/l5-swagger.php'
+removed '/var/www/html/AltExam/config/queue.php'
+removed '/var/www/html/AltExam/config/hashing.php'
+removed '/var/www/html/AltExam/config/filesystems.php'
+removed '/var/www/html/AltExam/config/session.php'
+removed '/var/www/html/AltExam/config/app.php'
+removed directory '/var/www/html/AltExam/config'
+removed '/var/www/html/AltExam/lang/en/auth.php'
+removed '/var/www/html/AltExam/lang/en/passwords.php'
+removed '/var/www/html/AltExam/lang/en/pagination.php'
+removed '/var/www/html/AltExam/lang/en/validation.php'
+removed '/var/www/html/AltExam/lang/en/models.php'
+removed directory '/var/www/html/AltExam/lang/en'
+removed directory '/var/www/html/AltExam/lang'
+removed '/var/www/html/AltExam/.git/HEAD'
+removed '/var/www/html/AltExam/.git/info/exclude'
+removed directory '/var/www/html/AltExam/.git/info'
+removed '/var/www/html/AltExam/.git/refs/heads/master'
+removed directory '/var/www/html/AltExam/.git/refs/heads'
+removed '/var/www/html/AltExam/.git/refs/remotes/origin/main'
+removed directory '/var/www/html/AltExam/.git/refs/remotes/origin'
+removed directory '/var/www/html/AltExam/.git/refs/remotes'
+removed directory '/var/www/html/AltExam/.git/refs/tags'
+removed directory '/var/www/html/AltExam/.git/refs'
+removed '/var/www/html/AltExam/.git/config'
+removed '/var/www/html/AltExam/.git/hooks/update.sample'
+removed '/var/www/html/AltExam/.git/hooks/pre-applypatch.sample'
+removed '/var/www/html/AltExam/.git/hooks/fsmonitor-watchman.sample'
+removed '/var/www/html/AltExam/.git/hooks/pre-merge-commit.sample'
+removed '/var/www/html/AltExam/.git/hooks/pre-rebase.sample'
+removed '/var/www/html/AltExam/.git/hooks/prepare-commit-msg.sample'
+removed '/var/www/html/AltExam/.git/hooks/pre-receive.sample'
+removed '/var/www/html/AltExam/.git/hooks/post-update.sample'
+removed '/var/www/html/AltExam/.git/hooks/push-to-checkout.sample'
+removed '/var/www/html/AltExam/.git/hooks/applypatch-msg.sample'
+removed '/var/www/html/AltExam/.git/hooks/commit-msg.sample'
+removed '/var/www/html/AltExam/.git/hooks/pre-commit.sample'
+removed '/var/www/html/AltExam/.git/hooks/pre-push.sample'
+removed directory '/var/www/html/AltExam/.git/hooks'
+removed directory '/var/www/html/AltExam/.git/branches'
+removed '/var/www/html/AltExam/.git/description'
+removed '/var/www/html/AltExam/.git/FETCH_HEAD'
+removed '/var/www/html/AltExam/.git/logs/HEAD'
+removed '/var/www/html/AltExam/.git/logs/refs/heads/master'
+removed directory '/var/www/html/AltExam/.git/logs/refs/heads'
+removed '/var/www/html/AltExam/.git/logs/refs/remotes/origin/main'
+removed directory '/var/www/html/AltExam/.git/logs/refs/remotes/origin'
+removed directory '/var/www/html/AltExam/.git/logs/refs/remotes'
+removed directory '/var/www/html/AltExam/.git/logs/refs'
+removed directory '/var/www/html/AltExam/.git/logs'
+removed '/var/www/html/AltExam/.git/index'
+removed directory '/var/www/html/AltExam/.git/objects/info'
+removed '/var/www/html/AltExam/.git/objects/pack/pack-318f2862c0e23acf1c55d87b6b83b26dd99d950b.idx'
+removed '/var/www/html/AltExam/.git/objects/pack/pack-318f2862c0e23acf1c55d87b6b83b26dd99d950b.pack'
+removed directory '/var/www/html/AltExam/.git/objects/pack'
+removed directory '/var/www/html/AltExam/.git/objects'
+removed directory '/var/www/html/AltExam/.git'
+removed '/var/www/html/AltExam/package.json'
+removed '/var/www/html/AltExam/docker-compose.yml'
+removed '/var/www/html/AltExam/app/Providers/AppServiceProvider.php'
+removed '/var/www/html/AltExam/app/Providers/AuthServiceProvider.php'
+removed '/var/www/html/AltExam/app/Providers/RouteServiceProvider.php'
+removed '/var/www/html/AltExam/app/Providers/BroadcastServiceProvider.php'
+removed '/var/www/html/AltExam/app/Providers/EventServiceProvider.php'
+removed directory '/var/www/html/AltExam/app/Providers'
+removed '/var/www/html/AltExam/app/Policies/CommentPolicy.php'
+removed '/var/www/html/AltExam/app/Policies/ArticlePolicy.php'
+removed directory '/var/www/html/AltExam/app/Policies'
+removed '/var/www/html/AltExam/app/Contracts/JwtParserInterface.php'
+removed '/var/www/html/AltExam/app/Contracts/JwtGeneratorInterface.php'
+removed '/var/www/html/AltExam/app/Contracts/JwtTokenInterface.php'
+removed '/var/www/html/AltExam/app/Contracts/JwtValidatorInterface.php'
+removed '/var/www/html/AltExam/app/Contracts/JwtSubjectInterface.php'
+removed '/var/www/html/AltExam/app/Contracts/JwtBuilderInterface.php'
+removed directory '/var/www/html/AltExam/app/Contracts'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/ArticlesCollection.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/TagResource.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/UserResource.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/CommentsCollection.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/CommentResource.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/TagsCollection.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/ProfileResource.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/ArticleResource.php'
+removed '/var/www/html/AltExam/app/Http/Resources/Api/BaseUserResource.php'
+removed directory '/var/www/html/AltExam/app/Http/Resources/Api'
+removed directory '/var/www/html/AltExam/app/Http/Resources'
+removed '/var/www/html/AltExam/app/Http/Controllers/Api/Articles/CommentsController.php'
+removed '/var/www/html/AltExam/app/Http/Controllers/Api/Articles/ArticleController.php'
+removed '/var/www/html/AltExam/app/Http/Controllers/Api/Articles/FavoritesController.php'
+removed directory '/var/www/html/AltExam/app/Http/Controllers/Api/Articles'
+removed '/var/www/html/AltExam/app/Http/Controllers/Api/AuthController.php'
+removed '/var/www/html/AltExam/app/Http/Controllers/Api/TagsController.php'
+removed '/var/www/html/AltExam/app/Http/Controllers/Api/ProfileController.php'
+removed '/var/www/html/AltExam/app/Http/Controllers/Api/UserController.php'
+removed directory '/var/www/html/AltExam/app/Http/Controllers/Api'
+removed '/var/www/html/AltExam/app/Http/Controllers/Controller.php'
+removed directory '/var/www/html/AltExam/app/Http/Controllers'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/ArticleListRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/FeedRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/NewCommentRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/UpdateArticleRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/BaseArticleRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/NewUserRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/UpdateUserRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/NewArticleRequest.php'
+removed '/var/www/html/AltExam/app/Http/Requests/Api/LoginRequest.php'
+removed directory '/var/www/html/AltExam/app/Http/Requests/Api'
+removed directory '/var/www/html/AltExam/app/Http/Requests'
+removed '/var/www/html/AltExam/app/Http/Kernel.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/PreventRequestsDuringMaintenance.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/EncryptCookies.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/VerifyCsrfToken.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/Authenticate.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/RedirectIfAuthenticated.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/TrimStrings.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/TrustProxies.php'
+removed '/var/www/html/AltExam/app/Http/Middleware/TrustHosts.php'
+removed directory '/var/www/html/AltExam/app/Http/Middleware'
+removed directory '/var/www/html/AltExam/app/Http'
+removed '/var/www/html/AltExam/app/Models/Tag.php'
+removed '/var/www/html/AltExam/app/Models/Article.php'
+removed '/var/www/html/AltExam/app/Models/Comment.php'
+removed '/var/www/html/AltExam/app/Models/User.php'
+removed directory '/var/www/html/AltExam/app/Models'
+removed '/var/www/html/AltExam/app/Jwt/Builder.php'
+removed '/var/www/html/AltExam/app/Jwt/Parser.php'
+removed '/var/www/html/AltExam/app/Jwt/Generator.php'
+removed '/var/www/html/AltExam/app/Jwt/Validator.php'
+removed '/var/www/html/AltExam/app/Jwt/Token.php'
+removed directory '/var/www/html/AltExam/app/Jwt'
+removed '/var/www/html/AltExam/app/Console/Kernel.php'
+removed directory '/var/www/html/AltExam/app/Console'
+removed '/var/www/html/AltExam/app/Exceptions/JwtParseException.php'
+removed '/var/www/html/AltExam/app/Exceptions/Handler.php'
+removed directory '/var/www/html/AltExam/app/Exceptions'
+removed '/var/www/html/AltExam/app/Auth/JwtGuard.php'
+removed directory '/var/www/html/AltExam/app/Auth'
+removed directory '/var/www/html/AltExam/app'
+removed '/var/www/html/AltExam/.github/ISSUE_TEMPLATE/bug_report.md'
+removed '/var/www/html/AltExam/.github/ISSUE_TEMPLATE/feature_request.md'
+removed directory '/var/www/html/AltExam/.github/ISSUE_TEMPLATE'
+removed '/var/www/html/AltExam/.github/readme/logo.png'
+removed directory '/var/www/html/AltExam/.github/readme'
+removed '/var/www/html/AltExam/.github/workflows/static-analysis.yml'
+removed '/var/www/html/AltExam/.github/workflows/tests.yml'
+removed directory '/var/www/html/AltExam/.github/workflows'
+removed '/var/www/html/AltExam/.github/dependabot.yml'
+removed directory '/var/www/html/AltExam/.github'
+removed '/var/www/html/AltExam/webpack.mix.js'
+removed '/var/www/html/AltExam/storage/api-docs/.gitignore'
+removed directory '/var/www/html/AltExam/storage/api-docs'
+removed '/var/www/html/AltExam/storage/framework/testing/.gitignore'
+removed directory '/var/www/html/AltExam/storage/framework/testing'
+removed '/var/www/html/AltExam/storage/framework/cache/data/.gitignore'
+removed directory '/var/www/html/AltExam/storage/framework/cache/data'
+removed '/var/www/html/AltExam/storage/framework/cache/.gitignore'
+removed directory '/var/www/html/AltExam/storage/framework/cache'
+removed '/var/www/html/AltExam/storage/framework/views/.gitignore'
+removed directory '/var/www/html/AltExam/storage/framework/views'
+removed '/var/www/html/AltExam/storage/framework/sessions/.gitignore'
+removed directory '/var/www/html/AltExam/storage/framework/sessions'
+removed '/var/www/html/AltExam/storage/framework/.gitignore'
+removed directory '/var/www/html/AltExam/storage/framework'
+removed '/var/www/html/AltExam/storage/app/.gitignore'
+removed '/var/www/html/AltExam/storage/app/public/.gitignore'
+removed directory '/var/www/html/AltExam/storage/app/public'
+removed directory '/var/www/html/AltExam/storage/app'
+removed '/var/www/html/AltExam/storage/logs/.gitignore'
+removed directory '/var/www/html/AltExam/storage/logs'
+removed directory '/var/www/html/AltExam/storage'
+removed '/var/www/html/AltExam/.env.example'
+removed '/var/www/html/AltExam/composer.lock'
+removed '/var/www/html/AltExam/tests/Feature/Api/TagsTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Profile/ShowProfileTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Profile/FollowProfileTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Profile/UnfollowProfileTest.php'
+removed directory '/var/www/html/AltExam/tests/Feature/Api/Profile'
+removed '/var/www/html/AltExam/tests/Feature/Api/Comments/ListCommentsTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Comments/DeleteCommentTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Comments/CreateCommentTest.php'
+removed directory '/var/www/html/AltExam/tests/Feature/Api/Comments'
+removed '/var/www/html/AltExam/tests/Feature/Api/User/UpdateUserTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/User/ShowUserTest.php'
+removed directory '/var/www/html/AltExam/tests/Feature/Api/User'
+removed '/var/www/html/AltExam/tests/Feature/Api/Favorites/RemoveFavoritesTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Favorites/AddFavoritesTest.php'
+removed directory '/var/www/html/AltExam/tests/Feature/Api/Favorites'
+removed '/var/www/html/AltExam/tests/Feature/Api/Auth/RegisterTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Auth/LoginTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Auth/JwtGuardTest.php'
+removed directory '/var/www/html/AltExam/tests/Feature/Api/Auth'
+removed '/var/www/html/AltExam/tests/Feature/Api/Article/DeleteArticleTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Article/CreateArticleTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Article/ArticleFeedTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Article/ListArticlesTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Article/ShowArticleTest.php'
+removed '/var/www/html/AltExam/tests/Feature/Api/Article/UpdateArticleTest.php'
+removed directory '/var/www/html/AltExam/tests/Feature/Api/Article'
+removed directory '/var/www/html/AltExam/tests/Feature/Api'
+removed '/var/www/html/AltExam/tests/Feature/Jwt/JwtValidatorTest.php'
+removed directory '/var/www/html/AltExam/tests/Feature/Jwt'
+removed directory '/var/www/html/AltExam/tests/Feature'
+removed '/var/www/html/AltExam/tests/CreatesApplication.php'
+removed '/var/www/html/AltExam/tests/Unit/Jwt/JwtParserTest.php'
+removed directory '/var/www/html/AltExam/tests/Unit/Jwt'
+removed directory '/var/www/html/AltExam/tests/Unit'
+removed '/var/www/html/AltExam/tests/TestCase.php'
+removed directory '/var/www/html/AltExam/tests'
+removed '/var/www/html/AltExam/routes/channels.php'
+removed '/var/www/html/AltExam/routes/console.php'
+removed '/var/www/html/AltExam/routes/api.php'
+removed '/var/www/html/AltExam/routes/web.php'
+removed directory '/var/www/html/AltExam/routes'
+removed '/var/www/html/AltExam/README.md'
+removed '/var/www/html/AltExam/phpstan-baseline.neon'
+removed '/var/www/html/AltExam/artisan'
+removed '/var/www/html/AltExam/database/seeders/DatabaseSeeder.php'
+removed directory '/var/www/html/AltExam/database/seeders'
+removed '/var/www/html/AltExam/database/factories/ArticleFactory.php'
+removed '/var/www/html/AltExam/database/factories/TagFactory.php'
+removed '/var/www/html/AltExam/database/factories/UserFactory.php'
+removed '/var/www/html/AltExam/database/factories/CommentFactory.php'
+removed directory '/var/www/html/AltExam/database/factories'
+removed '/var/www/html/AltExam/database/migrations/2021_05_23_150848_create_tags_table.php'
+removed '/var/www/html/AltExam/database/migrations/2021_05_23_150839_create_comments_table.php'
+removed '/var/www/html/AltExam/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php'
+removed '/var/www/html/AltExam/database/migrations/2014_10_12_100000_create_password_resets_table.php'
+removed '/var/www/html/AltExam/database/migrations/2021_05_23_150828_create_articles_table.php'
+removed '/var/www/html/AltExam/database/migrations/2019_08_19_000000_create_failed_jobs_table.php'
+removed '/var/www/html/AltExam/database/migrations/2021_05_23_151511_create_article_tag_table.php'
+removed '/var/www/html/AltExam/database/migrations/2021_05_21_130644_add_fields_to_users_table.php'
+removed '/var/www/html/AltExam/database/migrations/2021_05_23_152011_create_article_favorite_table.php'
+removed '/var/www/html/AltExam/database/migrations/2014_10_12_000000_create_users_table.php'
+removed '/var/www/html/AltExam/database/migrations/2021_05_23_123208_create_user_follower_table.php'
+removed directory '/var/www/html/AltExam/database/migrations'
+removed '/var/www/html/AltExam/database/.gitignore'
+removed directory '/var/www/html/AltExam/database'
+removed '/var/www/html/AltExam/.gitignore'
+removed '/var/www/html/AltExam/LICENSE'
+removed '/var/www/html/AltExam/.editorconfig'
+removed '/var/www/html/AltExam/public/.htaccess'
+removed '/var/www/html/AltExam/public/favicon.ico'
+removed '/var/www/html/AltExam/public/robots.txt'
+removed '/var/www/html/AltExam/public/index.php'
+removed directory '/var/www/html/AltExam/public'
+removed directory '/var/www/html/AltExam'
