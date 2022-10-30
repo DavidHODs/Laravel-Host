@@ -41,12 +41,13 @@ function servicesIniation {
 # checks for errors in the logfile
 function errorReport {
     cd /home/david/Desktop/AltSchool/2ndSemesterExam
-    if grep -i "error" log.log; then
+    if grep -i "err" log.log | grep -i "warning" log.log; then
         echo "Errors Found During Laravel Hosting Operation $(date) for ${host}" >> ${errorLog}
         echo "+-------------------------------+" >> ${errorLog}
         echo >> ${errorLog}
 
-        grep -i "error" log.log >> ${errorLog}
+        grep -i "err" log.log >> ${errorLog}
+        grep -i "warning" log.log >> ${errorLog}
         echo "+-------------------------------+" >> ${errorLog}
 
         echo >> ${errorLog}
@@ -82,22 +83,68 @@ function gitOp {
 
     # checks if AltEXam folder exists in apache html directory before deleting it
     if [ -d /var/www/html/AltExam ]; then
-        sudo rm -rfv /var/www/html/AltExam
+        sudo rm -rf /var/www/html/AltExam
     fi
     
     # moves AltExam folder containing the app to be hosted into apache html directory
     sudo mv AltExam /var/www/html/ 
 }
 
-packageUpdate >> ${log}
-dependenciesInstallation >> ${log}
-packageInstallation >> ${log}
-packageUpdate >> ${log}
-servicesIniation >> ${log}
-gitOp >> ${log}
-errorReport
+cat > ~/Desktop/AltSchool/2ndSemesterExam/laravel_project.conf << End_of_Conf
+<VirtualHost *:80>
+    ServerName ${host}
+    ServerAdmin webmaster@${host}
+    DocumentRoot /var/www/html/AltExam/public
 
-# sudo -i 
-# su - postgres
-# psql
-# exit;
+    <Directory /var/www/html/AltExam>
+        AllowOverride All
+    </Directory>
+    ErrorLog /var/log/apache2/error.log
+    CustomLog /var/log/apache2/access.log combined
+</VirtualHost
+End_of_Conf
+
+# apacheOp executes logics for the actual app hosting
+function apacheOp {
+    cd /var/www/html/AltExam
+    composer update
+    composer create-project
+
+    sudo chgrp -R www-data /var/www/html/AltExam/
+    sudo chmod -R 775 /var/www/html/AltExam/storage
+
+    sudo php artisan key:generate
+    sudo php artisan migrate *phpcli
+
+    # checks if project conf file exists
+    if [ -f /etc/apache2/sites-available/laravel_project.conf ]; then
+        sudo rm -rf /etc/apache2/sites-available/laravel_project.conf
+    fi
+
+    sudo cp ~/Desktop/AltSchool/2ndSemesterExam/laravel_project.conf /etc/apache2/sites-available/
+
+    cd /etc/apache2/sites-available
+
+    # disables the default configuration file of the virtual hosts in Apache
+    sudo a2dissite 000-default.conf
+
+    # enables the new virtual host:
+    sudo a2ensite laravel_project
+
+    # enables the Apache rewrite module and restarts the Apache service
+    sudo a2enmod rewrite
+    sudo systemctl restart apache2
+}
+
+# brainBox calls the created functions
+function brainBox {
+    packageUpdate
+    dependenciesInstallation
+    packageInstallation
+    packageUpdate
+    servicesIniation
+    gitOp
+    apacheOp
+}
+brainBox >> ${log}
+# errorReport
