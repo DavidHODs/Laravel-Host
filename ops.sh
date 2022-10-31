@@ -5,7 +5,11 @@ packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'postgresql'
 
 log=~/Desktop/AltSchool/2ndSemesterExam/log.log
 errorLog=~/Desktop/AltSchool/2ndSemesterExam/error.log
-host=$(hostname -I)
+
+# returns the first ip address (included this logic because my system returned multiple ip addresses)
+host_ip=$(hostname -i)
+host=${host_ip[0]}
+
 key=$(< ~/Desktop/AltSchool/.key)
 
 # function to update all packages
@@ -90,19 +94,11 @@ function gitOp {
     sudo mv AltExam /var/www/html/ 
 }
 
-cat > ~/Desktop/AltSchool/2ndSemesterExam/laravel_project.conf << End_of_Conf
-<VirtualHost *:80>
-    ServerName ${host}
-    ServerAdmin webmaster@${host}
-    DocumentRoot /var/www/html/AltExam/public
-
-    <Directory /var/www/html/AltExam>
-        AllowOverride All
-    </Directory>
-    ErrorLog /var/log/apache2/error.log
-    CustomLog /var/log/apache2/access.log combined
-</VirtualHost
-End_of_Conf
+# apacheConf formats the contents of apache conf file with the propoer host ip address
+function apacheConf {
+    export host=${host}
+    envsubst '$host' < ~/Desktop/AltSchool/2ndSemesterExam/conf.txt > ~/Desktop/AltSchool/2ndSemesterExam/laravel_project.conf
+}
 
 # apacheOp executes logics for the actual app hosting
 function apacheOp {
@@ -144,7 +140,8 @@ function brainBox {
     packageUpdate
     servicesIniation
     gitOp
+    apacheConf
     apacheOp
 }
 brainBox >> ${log}
-# errorReport
+errorReport

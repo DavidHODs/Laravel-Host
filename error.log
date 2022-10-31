@@ -1,12 +1,11 @@
-Errors Found During Laravel Hosting Operation Sun Oct 30 09:03:01 PM WAT 2022 for 192.168.43.36 192.168.58.1 172.19.0.1 172.17.0.1 
+Errors Found During Laravel Hosting Operation Mon Oct 31 11:56:24 AM WAT 2022 for 127.0.1.1
 +-------------------------------+
 
-Err:15 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
-Err:17 https://baltocdn.com/helm/stable/debian all InRelease
-Error: must run as root
+Err:17 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
 Err:13 https://baltocdn.com/helm/stable/debian all InRelease
-Err:19 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
-Oct 30 20:53:07 EliteBook apachectl[161787]: AH00112: Warning: DocumentRoot [/var/www/html/myapp/public] does not exist
-Oct 30 20:56:47 EliteBook apachectl[163780]: AH00112: Warning: DocumentRoot [/var/www/html/myapp/public] does not exist
+Error: must run as root
+Err:17 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+Err:16 https://baltocdn.com/helm/stable/debian all InRelease
+Oct 31 11:24:22 EliteBook apachectl[63746]: AH00112: Warning: DocumentRoot [/var/www/html/myapp/public] does not exist
 +-------------------------------+
 
