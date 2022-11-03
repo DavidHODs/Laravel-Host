@@ -1,0 +1,33 @@
+#!/home/david/ansible/myansible/bin/ansible-playbook
+
+- name: AltSchool Examination Project
+  hosts: aws_ec2
+  become: 'yes'
+  become_user: root
+
+  tasks:
+    - block:
+      - name: Check if Recipient Folder Exists
+        stat:
+          path: ~/Laravel-Host
+        register: projectFolder
+
+      - name: Create Project Folder 
+        command: mkdir ~/Laravel-Host
+        when: not projectFolder.stat.exists
+        register: dirCreate
+      - debug: 
+          var: dirCreate
+
+      - name: Copy Folder Containing the Files on Remote Server and Change ops.sh Executable Permission
+        copy:
+          src: ~/Laravel-Host
+          dest: ~/
+          mode: 0644
+        register: chmod
+      - debug: var=chmod.results
+
+      - name: Run Operations
+        command: ~/Laravel-Host/ops.sh
+        register: ops 
+      - debug: var=ops.results
