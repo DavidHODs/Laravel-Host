@@ -2,7 +2,7 @@
 
 - name: AltSchool Examination Project
   hosts: aws_ec2
-  become: 'yes'
+  become: true
   become_user: root
 
   tasks:
@@ -24,10 +24,15 @@
           src: ~/Laravel-Host
           dest: ~/
           mode: 0644
+        register: clone
+      - debug: var=clone
+
+      - name: Change ops.sh Executable Permission
+        command: sudo chmod a+x ~/Laravel-Host/ops.sh
         register: chmod
-      - debug: var=chmod.results
+      - debug: var=chmod
 
       - name: Run Operations
         command: ~/Laravel-Host/ops.sh
         register: ops 
-      - debug: var=ops.results
+      - debug: var=ops

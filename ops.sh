@@ -3,14 +3,14 @@
 #list of packages needed
 packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'postgresql' 'postgresql-contrib')
 
-log=~/Desktop/AltSchool/2ndSemesterExam/log.log
-errorLog=~/Desktop/AltSchool/2ndSemesterExam/error.log
+log=~/Laravel-Host/ops.sh
+errorLog=~/Laravel-Host/error.log
 
 # returns the first ip address (included this logic because my system returned multiple ip addresses)
 host_ip=$(hostname -i)
 host=${host_ip[0]}
 
-key=$(< ~/Desktop/AltSchool/.key)
+key=$(< ~/Laravel-Host/.key)
 
 # function to update all packages
 function packageUpdate {
@@ -44,7 +44,7 @@ function servicesIniation {
 
 # checks for errors in the logfile
 function errorReport {
-    cd /home/david/Desktop/AltSchool/2ndSemesterExam
+    cd ~/Laravel-Host
     if grep -i "err" log.log | grep -i "warning" log.log; then
         echo "Errors Found During Laravel Hosting Operation $(date) for ${host}" >> ${errorLog}
         echo "+-------------------------------+" >> ${errorLog}
@@ -97,7 +97,7 @@ function gitOp {
 # apacheConf formats the contents of apache conf file with the propoer host ip address
 function apacheConf {
     export host=${host}
-    envsubst '$host' < ~/Desktop/AltSchool/2ndSemesterExam/conf.txt > ~/Desktop/AltSchool/2ndSemesterExam/laravel_project.conf
+    envsubst '$host' < ~/Laravel-Host/conf.txt > ~/Laravel-Host/laravel_project.conf
 }
 
 # apacheOp executes logics for the actual app hosting
@@ -117,7 +117,7 @@ function apacheOp {
         sudo rm -rf /etc/apache2/sites-available/laravel_project.conf
     fi
 
-    sudo cp ~/Desktop/AltSchool/2ndSemesterExam/laravel_project.conf /etc/apache2/sites-available/
+    sudo cp ~/Laravel-Host/laravel_project.conf /etc/apache2/sites-available/
 
     cd /etc/apache2/sites-available
 
