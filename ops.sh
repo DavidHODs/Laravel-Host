@@ -63,13 +63,12 @@ function errorReport {
 # pulls and moves the laravel app repo to be hosted into apache host directory
 function gitOp {
     # checks if AltExam folder does not exist before creating it
-    cd ~/var/www/html/
-
+    cd ~
     if [ ! -d AltExam ]; then
         mkdir AltExam
     fi
 
-    cd ~/var/www/html/AltExam/
+    cd AltExam
 
     # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
     if ! git remote -v; then
@@ -79,27 +78,27 @@ function gitOp {
         if ! git ls-remote --exit-code https://${key}@github.com/DavidHODs/altschool-cloud-exercises-.git; then 
             # removes origin and clears the contents of AltExam 
             git remote rm origin
-            rm -rf ~/var/www/html/AltExam/{*,.*}
+            rm -rf ~/AltExam/{*,.*}
             git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
         fi
     fi
  
-    pulls the laravel content repo
+    # pulls the laravel content repo
     git pull origin main
     cd ~
 
-    # # checks if AltEXam folder exists in apache html directory before deleting it
-    # if [ -d /var/www/html/AltExam ]; then
-    #     sudo rm -rf /var/www/html/AltExam
-    # fi
+    # checks if AltEXam folder exists in apache html directory before deleting it
+    if [ -d /var/www/html/AltExam ]; then
+        sudo rm -rf /var/www/html/AltExam
+    fi
     
-    # # moves AltExam folder containing the app to be hosted into apache html directory
+    # moves AltExam folder containing the app to be hosted into apache html directory
     # sudo mv ~/AltExam/ /var/www/html/ 
 }
 
-# function databaseSetUp {
-
-# }
+function databaseSetUp {
+    
+}
 
 # apacheConf formats the contents of apache conf file with the propoer host ip address
 function apacheConf {
