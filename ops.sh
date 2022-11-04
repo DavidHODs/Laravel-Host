@@ -93,7 +93,7 @@ function gitOp {
     fi
     
     # moves AltExam folder containing the app to be hosted into apache html directory
-    sudo mv ~/AltExam/ /var/www/html/ 
+    # sudo mv ~/AltExam/ /var/www/html/ 
 }
 
 # function databaseSetUp {
