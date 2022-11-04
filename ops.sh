@@ -10,7 +10,7 @@ errorLog=~/Laravel-Host/error.log
 host_ip=$(hostname -i)
 host=${host_ip[0]}
 
-key=`cat ~/Laravel-Host/.key`
+key=`cat /home/ubuntu/Laravel-Host/.key`
 
 # function to update all packages
 function packageUpdate {
