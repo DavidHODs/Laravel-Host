@@ -62,29 +62,6 @@ function errorReport {
 
 # pulls and moves the laravel app repo to be hosted into apache host directory
 function gitOp {
-    # checks if laravel-realworld-example-app folder does not exist before creating it
-    # cd ~
-    # if [ ! -d laravel-realworld-example-app ]; then
-    #     mkdir laravel-realworld-example-app
-    # fi
-
-    # cd laravel-realworld-example-app/
-
-    # # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
-    # if ! git remote -v; then
-    #     sudo git init
-    #     sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
-    # else
-    #     if ! git ls-remote --exit-code https://github.com/DavidHODs/laravel-realworld-example-app.git; then 
-    #         # removes origin and clears the contents of laravel-realworld-example-app 
-    #         sudo git remote rm origin
-    #         sudo rm -rf ~/laravel-realworld-example-app/{*,.*}
-    #         sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
-    #     fi
-    # fi
- 
-    # # pulls the laravel content repo
-    # sudo git pull origin main
     cd ~
 
     # checks if laravel-realworld-example-app folder exists in apache html directory before deleting it
@@ -93,7 +70,7 @@ function gitOp {
     fi
     
     # moves laravel-realworld-example-app folder containing the app to be hosted into apache html directory
-    # sudo mv ~/AltExam/ /var/www/html/ 
+    sudo mv ~/laravel-realworld-example-app /var/www/html/ 
 }
 
 # function databaseSetUp {
@@ -153,7 +130,7 @@ function brainBox {
     composerInstallation
     packageUpdate
     servicesIniation
-    # gitOp
+    gitOp
     apacheConf
     apacheOp
 }
