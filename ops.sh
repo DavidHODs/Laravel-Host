@@ -63,28 +63,28 @@ function errorReport {
 # pulls and moves the laravel app repo to be hosted into apache host directory
 function gitOp {
     # checks if AltExam folder does not exist before creating it
-    cd ~
-    if [ ! -d AltExam ]; then
-        mkdir AltExam
-    fi
+    # cd ~
+    # if [ ! -d AltExam ]; then
+    #     mkdir AltExam
+    # fi
 
-    cd AltExam/
+    # cd AltExam/
 
-    # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
-    if ! git remote -v; then
-        sudo git init
-        sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
-    else
-        if ! git ls-remote --exit-code https://github.com/DavidHODs/laravel-realworld-example-app.git; then 
-            # removes origin and clears the contents of AltExam 
-            sudo git remote rm origin
-            sudo rm -rf ~/AltExam/{*,.*}
-            sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
-        fi
-    fi
+    # # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
+    # if ! git remote -v; then
+    #     sudo git init
+    #     sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
+    # else
+    #     if ! git ls-remote --exit-code https://github.com/DavidHODs/laravel-realworld-example-app.git; then 
+    #         # removes origin and clears the contents of AltExam 
+    #         sudo git remote rm origin
+    #         sudo rm -rf ~/AltExam/{*,.*}
+    #         sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
+    #     fi
+    # fi
  
-    # pulls the laravel content repo
-    sudo git pull origin main
+    # # pulls the laravel content repo
+    # sudo git pull origin main
     cd ~
 
     # checks if AltEXam folder exists in apache html directory before deleting it
@@ -108,6 +108,13 @@ function apacheConf {
 
 # apacheOp executes logics for the actual app hosting
 function apacheOp {
+     cd ~
+
+    # checks if AltEXam folder exists in apache html directory before deleting it
+    if [ -d /var/www/html/AltExam ]; then
+        sudo rm -rf /var/www/html/AltExam
+    fi
+
     cd /var/www/html/AltExam
     composer update
     composer create-project
@@ -146,7 +153,7 @@ function brainBox {
     composerInstallation
     packageUpdate
     servicesIniation
-    gitOp
+    # gitOp
     apacheConf
     apacheOp
 }

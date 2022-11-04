@@ -7,7 +7,9 @@
   vars:
     opsFile: ~/Laravel-Host/ops.sh
     opsFolder: ~/Laravel-Host
+    laravelFolder: ~/AltExam
     repo: github.com/DavidHODs/Laravel-Host.git
+    laravel-repo: github.com/DavidHODs/laravel-realworld-example-app.git
 
   tasks:
     - block:
@@ -18,15 +20,31 @@
       - debug: 
           var: projectFolder.stat.exists
 
-      - name: Create Project Folder 
+      - name: Check if Laravel EXample Folder Exists
+        stat:
+          path: "{{ laravelFolder }}"
+        register: laravelOpFolder
+      - debug: 
+          var: laravelFolder.stat.exists
+
+      - name: Delete Project Folder if it Exists 
         command: "{{ item }}"
         with_items:
           - sudo rm -rf "{{ opsFolder }}"
-          # - mkdir "{{ opsFolder }}"/
         when: projectFolder.stat.exists
-        register: dirCreate
+        register: dirDelete
       - debug: 
-          var: dirCreate
+          var: dirDelete
+
+      - name: Delete Laravel Folder if it Exists 
+        command: "{{ item }}"
+        with_items:
+          - sudo rm -rf "{{ laravelFolder }}"
+        when: laravelOpFolder.stat.exists
+        register: lavDelete
+      - debug: 
+          var: lavDelete
+
 
       # - name: Copy Folder Containing the Files on Remote Server and Change ops.sh Executable Permission
       #   copy:
@@ -43,13 +61,19 @@
       - debug:
           var: clone
 
-      - name: Copy File Containing Secret Key
-        copy:
-          src: ~/Laravel-Host/.key
-          dest: ~/Laravel-Host/ 
-        register: copy 
-      - debug: 
-          var: copy 
+      - name: Pull Laravel Example Git Repo
+        command: cd ~/AltExam && git pull https://"{{ secret }}"@"{{ laravel-repo}}"
+        register: pull
+      - debug:
+          var: pull
+
+      # - name: Copy File Containing Secret Key
+      #   copy:
+      #     src: ~/Laravel-Host/.key
+      #     dest: ~/Laravel-Host/ 
+      #   register: copy 
+      # - debug: 
+      #     var: copy 
 
       - name: Change ops.sh Executable Permission
         command: sudo chmod a+x "{{ opsFile }}"
