@@ -43,6 +43,14 @@
       - debug:
           var: clone
 
+      - name: Copy File Containing Secret Key
+        copy:
+          src: ~/Laravel-Host/.key
+          dest: ~/Laravel-Host/ 
+        register: copy 
+      - debug: 
+          var: copy 
+
       - name: Change ops.sh Executable Permission
         command: sudo chmod a+x "{{ opsFile }}"
         register: chmod

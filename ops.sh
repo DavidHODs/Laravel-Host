@@ -110,7 +110,7 @@ function apacheOp {
     sudo chmod -R 775 /var/www/html/AltExam/storage
 
     sudo php artisan key:generate
-    sudo php artisan migrate *phpcli
+    sudo php artisan migrate
 
     # checks if project conf file exists
     if [ -f /etc/apache2/sites-available/laravel_project.conf ]; then
