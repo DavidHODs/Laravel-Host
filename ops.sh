@@ -97,9 +97,9 @@ function gitOp {
     # sudo mv ~/AltExam/ /var/www/html/ 
 }
 
-function databaseSetUp {
+# function databaseSetUp {
 
-}
+# }
 
 # apacheConf formats the contents of apache conf file with the propoer host ip address
 function apacheConf {
