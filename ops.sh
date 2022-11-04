@@ -75,7 +75,7 @@ function gitOp {
         sudo git init
         git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
     else
-        if ! git ls-remote --exit-code https://${key}@github.com/DavidHODs/altschool-cloud-exercises-.git; then 
+        if ! git ls-remote --exit-code https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git; then 
             # removes origin and clears the contents of AltExam 
             git remote rm origin
             rm -rf ~/AltExam/{*,.*}
