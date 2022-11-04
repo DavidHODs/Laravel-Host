@@ -73,13 +73,13 @@ function gitOp {
     # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
     if ! git remote -v; then
         sudo git init
-        git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
+        sudo git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
     else
         if ! git ls-remote --exit-code https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git; then 
             # removes origin and clears the contents of AltExam 
-            git remote rm origin
-            rm -rf ~/AltExam/{*,.*}
-            git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
+            sudo git remote rm origin
+            sudo rm -rf ~/AltExam/{*,.*}
+            sudo git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
         fi
     fi
  
