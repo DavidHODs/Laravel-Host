@@ -72,7 +72,7 @@ function gitOp {
 
     # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
     if ! git remote -v; then
-        git init
+        sudo git init
         git remote add origin https://${key}@github.com/DavidHODs/laravel-realworld-example-app.git
     else
         if ! git ls-remote --exit-code https://${key}@github.com/DavidHODs/altschool-cloud-exercises-.git; then 
