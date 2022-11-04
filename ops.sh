@@ -84,9 +84,9 @@ function gitOp {
         fi
     fi
  
-    # pulls the laravel content repo
-    # git pull origin main
-    # cd ~
+    pulls the laravel content repo
+    git pull origin main
+    cd ~
 
     # # checks if AltEXam folder exists in apache html directory before deleting it
     # if [ -d /var/www/html/AltExam ]; then
