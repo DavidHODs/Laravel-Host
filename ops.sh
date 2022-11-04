@@ -3,7 +3,7 @@
 #list of packages needed
 packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'postgresql' 'postgresql-contrib')
 
-log=~/Laravel-Host/ops.sh
+log=~/Laravel-Host/log.log
 errorLog=~/Laravel-Host/error.log
 
 # returns the first ip address (included this logic because my system returned multiple ip addresses)
@@ -44,7 +44,7 @@ function servicesIniation {
 
 # checks for errors in the logfile
 function errorReport {
-    cd ~/Laravel-Host
+    cd ~/Laravel-Host/
     if grep -i "err" log.log | grep -i "warning" log.log; then
         echo "Errors Found During Laravel Hosting Operation $(date) for ${host}" >> ${errorLog}
         echo "+-------------------------------+" >> ${errorLog}

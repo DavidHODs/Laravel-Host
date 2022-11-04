@@ -3,36 +3,52 @@
 - name: AltSchool Examination Project
   hosts: aws_ec2
   become: true
-  become_user: root
+  become_user: ubuntu
+  vars:
+    opsFile: ~/Laravel-Host/ops.sh
+    opsFolder: ~/Laravel-Host
+    repo: github.com/DavidHODs/Laravel-Host.git
 
   tasks:
     - block:
       - name: Check if Recipient Folder Exists
         stat:
-          path: ~/Laravel-Host
+          path: "{{ opsFolder }}"
         register: projectFolder
+      - debug: 
+          var: projectFolder.stat.exists
 
       - name: Create Project Folder 
-        command: mkdir ~/Laravel-Host
-        when: not projectFolder.stat.exists
+        command: "{{ item }}"
+        with_items:
+          - sudo rm -rf "{{ opsFolder }}"
+          - mkdir "{{ opsFolder }}"/
+        when: projectFolder.stat.exists
         register: dirCreate
       - debug: 
           var: dirCreate
 
-      - name: Copy Folder Containing the Files on Remote Server and Change ops.sh Executable Permission
-        copy:
-          src: ~/Laravel-Host
-          dest: ~/
-          mode: 0644
-        register: clone
-      - debug: var=clone
+      # - name: Copy Folder Containing the Files on Remote Server and Change ops.sh Executable Permission
+      #   copy:
+      #     src: ~/Laravel-Host
+      #     dest: ~/
+      #     mode: 0644
+      #   register: clone
+      # - debug: var=clone
+
+      # adopted git clone as copying directory was taking ages
+      - name: Clone Laravel-Host Git Repo
+        command: git clone https://"{{ secret }}"@"{{ repo }}"
+        register: clone 
+      - debug:
+          var: clone
 
       - name: Change ops.sh Executable Permission
-        command: sudo chmod a+x ~/Laravel-Host/ops.sh
+        command: sudo chmod a+x "{{ opsFile }}"
         register: chmod
       - debug: var=chmod
 
       - name: Run Operations
-        command: ~/Laravel-Host/ops.sh
+        command: "{{ opsFile }}"
         register: ops 
       - debug: var=ops

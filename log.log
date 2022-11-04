@@ -157,3 +157,168 @@ phpstan/extension-installer: Extensions installed
 Site 000-default already disabled
 Site laravel_project already enabled
 Module rewrite already enabled
+Hit:1 http://nginx.org/packages/ubuntu jammy InRelease
+Hit:3 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
+Hit:4 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:5 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Ign:6 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:7 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Hit:8 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:9 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Hit:10 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Ign:11 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:2 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Hit:12 https://apt.releases.hashicorp.com jammy InRelease
+Hit:13 https://download.docker.com/linux/ubuntu jammy InRelease
+Get:14 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Hit:15 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Err:16 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+  404  Not Found [IP: 52.53.39.61 443]
+Hit:18 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
+Err:14 https://baltocdn.com/helm/stable/debian all InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20211016).
+lsb-release is already the newest version (11.1.0ubuntu4).
+software-properties-common is already the newest version (0.99.22.3).
+apt-transport-https is already the newest version (2.4.8).
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 24 not upgraded.
+Error: must run as root
+All settings correct for using Composer
+Downloading...
+
+Composer (version 2.4.4) successfully installed to: /home/david/Laravel-Host/composer.phar
+Use it: php composer.phar
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+postgresql is already the newest version (14+238).
+postgresql-contrib is already the newest version (14+238).
+apache2 is already the newest version (2.4.52-1ubuntu4.1).
+git is already the newest version (1:2.34.1-1ubuntu1.5).
+php8.1-curl is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+php8.1-pgsql is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+php8.1-xml is already the newest version (8.1.12-1+ubuntu22.04.1+deb.sury.org+1).
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 24 not upgraded.
+Hit:1 http://nginx.org/packages/ubuntu jammy InRelease
+Ign:2 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Hit:3 http://mirror.cov.ukservers.com/ubuntu jammy InRelease
+Hit:5 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:6 https://pkg.jenkins.io/debian-stable binary/ Release
+Hit:7 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Hit:8 http://mirror.cov.ukservers.com/ubuntu jammy-updates InRelease
+Hit:9 http://mirror.cov.ukservers.com/ubuntu jammy-backports InRelease
+Get:10 https://baltocdn.com/helm/stable/debian all InRelease [7,652 B]
+Hit:12 https://ppa.launchpadcontent.net/openjdk-r/ppa/ubuntu jammy InRelease
+Ign:13 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy InRelease
+Hit:14 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:15 http://mirror.cov.ukservers.com/ubuntu jammy-security InRelease
+Hit:16 https://apt.releases.hashicorp.com jammy InRelease
+Hit:4 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Err:17 https://packagecloud.io/golang-migrate/migrate/ubuntu jammy Release
+  404  Not Found [IP: 54.151.6.117 443]
+Err:10 https://baltocdn.com/helm/stable/debian all InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 294AC4827C1A168A
+Hit:18 https://ppa.launchpadcontent.net/pjbroad/ppa/ubuntu jammy InRelease
+Hit:19 https://ppa.launchpadcontent.net/ubuntuhandbook1/avidemux/ubuntu jammy InRelease
+Reading package lists...
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; disabled; vendor preset: enabled)
+     Active: active (running) since Thu 2022-11-03 17:58:48 WAT; 5min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 30544 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 30548 (apache2)
+      Tasks: 6 (limit: 9306)
+     Memory: 12.6M
+        CPU: 75ms
+     CGroup: /system.slice/apache2.service
+             ├─30548 /usr/sbin/apache2 -k start
+             ├─30550 /usr/sbin/apache2 -k start
+             ├─30551 /usr/sbin/apache2 -k start
+             ├─30552 /usr/sbin/apache2 -k start
+             ├─30553 /usr/sbin/apache2 -k start
+             └─30554 /usr/sbin/apache2 -k start
+
+Nov 03 17:58:48 EliteBook systemd[1]: Starting The Apache HTTP Server...
+Nov 03 17:58:48 EliteBook apachectl[30547]: AH00112: Warning: DocumentRoot [/var/www/html/myapp/public] does not exist
+Nov 03 17:58:48 EliteBook apachectl[30547]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Nov 03 17:58:48 EliteBook systemd[1]: Started The Apache HTTP Server.
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+● postgresql.service - PostgreSQL RDBMS
+     Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Thu 2022-11-03 16:52:12 WAT; 1h 12min ago
+    Process: 1962 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 1962 (code=exited, status=0/SUCCESS)
+        CPU: 2ms
+
+Nov 03 16:52:12 EliteBook systemd[1]: Starting PostgreSQL RDBMS...
+Nov 03 16:52:12 EliteBook systemd[1]: Finished PostgreSQL RDBMS.
+Initialized empty Git repository in /home/david/AltExam/.git/
+
+  [37;44m INFO [39;49m Discovering packages.  
+
+  barryvdh/laravel-ide-helper [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  darkaonline/l5-swagger [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  laravel/sail [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  laravel/sanctum [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  laravel/tinker [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  nesbot/carbon [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  nunomaduro/collision [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  nunomaduro/termwind [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  spatie/laravel-ignition [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+
+phpstan/extension-installer: Extensions installed
+> nesbot/carbon: installed
+> nunomaduro/larastan: installed
+> phpstan/phpstan-phpunit: installed
+
+  [37;44m INFO [39;49m No publishable resources for tag [1m[laravel-assets][22m.  
+
+Exception: No application encryption key has been specified.
+Skipping \Illuminate\Support\Facades\Crypt.
+Exception: No application encryption key has been specified.
+Skipping \Illuminate\Support\Facades\Crypt.
+A new helper file was written to _ide_helper.php
+Unexpected no document on Illuminate\Database\Eloquent\Model
+Wrote expected docblock to /var/www/html/AltExam/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php
+A new meta file was written to .phpstorm.meta.php
+
+  [37;44m INFO [39;49m Discovering packages.  
+
+  barryvdh/laravel-ide-helper [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  darkaonline/l5-swagger [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  laravel/sail [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  laravel/sanctum [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  laravel/tinker [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  nesbot/carbon [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  nunomaduro/collision [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  nunomaduro/termwind [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+  spatie/laravel-ignition [90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m[90m.[39m [32;1mDONE[39;22m
+
+phpstan/extension-installer: Extensions installed
+
+  [37;44m INFO [39;49m Application key set successfully.  
+
+
+   INFO  Application key set successfully.  
+
+
+                                                               
+  No arguments expected for "migrate" command, got "*phpcli".  
+                                                               
+
+Site 000-default already disabled
+Site laravel_project already enabled
+Module rewrite already enabled
