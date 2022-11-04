@@ -134,10 +134,10 @@ function apacheOp {
 
 # brainBox calls the created functions
 function brainBox {
-    packageUpdate
+    # packageUpdate
     dependenciesInstallation
     packageInstallation
-    packageUpdate
+    # packageUpdate
     servicesIniation
     gitOp
     apacheConf
