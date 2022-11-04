@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 #list of packages needed
-packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'mysql-server')
+packages=('git' 'apache2' 'php8.1' 'php8.1-mysql' 'php8.1-xml' 'php8.1-curl' 'mysql-server')
 
 log=~/Laravel-Host/log.log
 errorLog=~/Laravel-Host/error.log
@@ -134,10 +134,10 @@ function apacheOp {
 
 # brainBox calls the created functions
 function brainBox {
-    # packageUpdate
+    packageUpdate
     dependenciesInstallation
     packageInstallation
-    # packageUpdate
+    packageUpdate
     servicesIniation
     gitOp
     apacheConf
