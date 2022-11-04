@@ -68,7 +68,7 @@ function gitOp {
         mkdir AltExam
     fi
 
-    cd AltExam
+    cd AltExam/
 
     # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
     if ! git remote -v; then
@@ -84,7 +84,7 @@ function gitOp {
     fi
  
     # pulls the laravel content repo
-    git pull origin main
+    sudo git pull origin main
     cd ~
 
     # checks if AltEXam folder exists in apache html directory before deleting it
