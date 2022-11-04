@@ -5,7 +5,7 @@
   become: true
   become_user: ubuntu
   vars:
-    opsFile: ~/Laravel-Host/ops.sh
+    opsFile: ~/Laravel-Host/opsII.sh
     opsFolder: ~/Laravel-Host
     laravelFolder: ~/laravel-realworld-example-app
     repo: github.com/DavidHODs/Laravel-Host.git
