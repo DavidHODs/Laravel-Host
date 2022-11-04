@@ -10,7 +10,7 @@ errorLog=~/Laravel-Host/error.log
 host_ip=$(hostname -i)
 host=${host_ip[0]}
 
-key=`cat ~/Laravel-Host/.key)`
+key=`cat ~/Laravel-Host/.key`
 
 # function to update all packages
 function packageUpdate {
@@ -93,7 +93,7 @@ function gitOp {
     fi
     
     # moves AltExam folder containing the app to be hosted into apache html directory
-    # sudo mv ~/AltExam/ /var/www/html/ 
+    sudo mv ~/AltExam/ /var/www/html/ 
 }
 
 # function databaseSetUp {
