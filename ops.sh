@@ -14,7 +14,7 @@ key=$(< ~/Laravel-Host/.key)
 
 # function to update all packages
 function packageUpdate {
-    apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean
+    sudo apt-get update -y && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean -y
 }
 
 function dependenciesInstallation {

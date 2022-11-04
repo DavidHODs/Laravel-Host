@@ -3,7 +3,7 @@
 - name: AltSchool Examination Project
   hosts: aws_ec2
   become: true
-  become_user: ubuntu
+  become_user: root
   vars:
     opsFile: ~/Laravel-Host/ops.sh
     opsFolder: ~/Laravel-Host
