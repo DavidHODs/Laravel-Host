@@ -10,7 +10,7 @@ errorLog=~/Laravel-Host/error.log
 host_ip=$(hostname -i)
 host=${host_ip[0]}
 
-key=`cat /home/ubuntu/Laravel-Host/.key`
+key=`cat ~/Laravel-Host/.key`
 
 # function to update all packages
 function packageUpdate {
@@ -73,13 +73,13 @@ function gitOp {
     # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
     if ! git remote -v; then
         sudo git init
-        sudo git remote add origin https://`cat /home/ubuntu/Laravel-Host/.key`@github.com/DavidHODs/laravel-realworld-example-app.git
+        sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
     else
-        if ! git ls-remote --exit-code https://`cat /home/ubuntu/Laravel-Host/.key`@github.com/DavidHODs/laravel-realworld-example-app.git; then 
+        if ! git ls-remote --exit-code https://github.com/DavidHODs/laravel-realworld-example-app.git; then 
             # removes origin and clears the contents of AltExam 
             sudo git remote rm origin
             sudo rm -rf ~/AltExam/{*,.*}
-            sudo git remote add origin https://`cat /home/ubuntu/Laravel-Host/.key`@github.com/DavidHODs/laravel-realworld-example-app.git
+            sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
         fi
     fi
  
