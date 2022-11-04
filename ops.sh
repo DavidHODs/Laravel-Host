@@ -21,8 +21,10 @@ function dependenciesInstallation {
     # installs dependencies needed for php8.1
     sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https 
     LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php 
+}
 
-    # downloads and gives current user executable permission for running laravel composer
+# downloads and gives current user executable permission for running laravel composer
+function composerInstallation {
     curl -sS https://getcomposer.org/installer | php
     sudo mv composer.phar /usr/local/bin/composer
     sudo chmod +x /usr/local/bin/composer
@@ -137,6 +139,7 @@ function brainBox {
     packageUpdate
     dependenciesInstallation
     packageInstallation
+    composerInstallation
     packageUpdate
     servicesIniation
     gitOp
