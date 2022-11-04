@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 #list of packages needed
-packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'postgresql' 'postgresql-contrib')
+packages=('git' 'apache2' 'php8.1-pgsql' 'php8.1-xml' 'php8.1-curl' 'mysql-server')
 
 log=~/Laravel-Host/log.log
 errorLog=~/Laravel-Host/error.log
@@ -38,8 +38,8 @@ function servicesIniation {
     sudo systemctl start apache2
     sudo systemctl status apache2
     sudo ufw allow 'Apache'
-    sudo systemctl start postgresql.service
-    sudo systemctl status postgresql.service
+    sudo systemctl start mysql.service
+    sudo systemctl status mysql.service
 }
 
 # checks for errors in the logfile
