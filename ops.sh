@@ -62,13 +62,13 @@ function errorReport {
 
 # pulls and moves the laravel app repo to be hosted into apache host directory
 function gitOp {
-    # checks if AltExam folder does not exist before creating it
+    # checks if laravel-realworld-example-app folder does not exist before creating it
     # cd ~
-    # if [ ! -d AltExam ]; then
-    #     mkdir AltExam
+    # if [ ! -d laravel-realworld-example-app ]; then
+    #     mkdir laravel-realworld-example-app
     # fi
 
-    # cd AltExam/
+    # cd laravel-realworld-example-app/
 
     # # checks if remote origin exists or if existing remote origin is not the same as the laravel folder to be pulled
     # if ! git remote -v; then
@@ -76,9 +76,9 @@ function gitOp {
     #     sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
     # else
     #     if ! git ls-remote --exit-code https://github.com/DavidHODs/laravel-realworld-example-app.git; then 
-    #         # removes origin and clears the contents of AltExam 
+    #         # removes origin and clears the contents of laravel-realworld-example-app 
     #         sudo git remote rm origin
-    #         sudo rm -rf ~/AltExam/{*,.*}
+    #         sudo rm -rf ~/laravel-realworld-example-app/{*,.*}
     #         sudo git remote add origin https://github.com/DavidHODs/laravel-realworld-example-app.git
     #     fi
     # fi
@@ -87,12 +87,12 @@ function gitOp {
     # sudo git pull origin main
     cd ~
 
-    # checks if AltEXam folder exists in apache html directory before deleting it
-    if [ -d /var/www/html/AltExam ]; then
-        sudo rm -rf /var/www/html/AltExam
+    # checks if laravel-realworld-example-app folder exists in apache html directory before deleting it
+    if [ -d /var/www/html/laravel-realworld-example-app ]; then
+        sudo rm -rf /var/www/html/laravel-realworld-example-app
     fi
     
-    # moves AltExam folder containing the app to be hosted into apache html directory
+    # moves laravel-realworld-example-app folder containing the app to be hosted into apache html directory
     # sudo mv ~/AltExam/ /var/www/html/ 
 }
 
@@ -110,17 +110,17 @@ function apacheConf {
 function apacheOp {
      cd ~
 
-    # checks if AltEXam folder exists in apache html directory before deleting it
-    if [ -d /var/www/html/AltExam ]; then
-        sudo rm -rf /var/www/html/AltExam
+    # checks if laravel-realworld-example-app folder exists in apache html directory before deleting it
+    if [ -d /var/www/html/laravel-realworld-example-app ]; then
+        sudo rm -rf /var/www/html/laravel-realworld-example-app
     fi
 
-    cd /var/www/html/AltExam
+    cd /var/www/html/laravel-realworld-example-app
     composer update
     composer create-project
 
-    sudo chgrp -R www-data /var/www/html/AltExam/
-    sudo chmod -R 775 /var/www/html/AltExam/storage
+    sudo chgrp -R www-data /var/www/html/laravel-realworld-example-app/
+    sudo chmod -R 775 /var/www/html/laravel-realworld-example-app/storage
 
     sudo php artisan key:generate
     sudo php artisan migrate

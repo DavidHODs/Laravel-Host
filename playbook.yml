@@ -7,9 +7,9 @@
   vars:
     opsFile: ~/Laravel-Host/ops.sh
     opsFolder: ~/Laravel-Host
-    laravelFolder: ~/AltExam
+    laravelFolder: ~/laravel-realworld-example-app
     repo: github.com/DavidHODs/Laravel-Host.git
-    laravel-repo: github.com/DavidHODs/laravel-realworld-example-app.git
+    laravelRepo: github.com/DavidHODs/laravel-realworld-example-app.git
 
   tasks:
     - block:
@@ -25,25 +25,28 @@
           path: "{{ laravelFolder }}"
         register: laravelOpFolder
       - debug: 
-          var: laravelFolder.stat.exists
+          var: laravelOpFolder.stat.exists
 
       - name: Delete Project Folder if it Exists 
-        command: "{{ item }}"
-        with_items:
-          - sudo rm -rf "{{ opsFolder }}"
+        command: sudo rm -rf "{{ opsFolder }}"
         when: projectFolder.stat.exists
         register: dirDelete
       - debug: 
           var: dirDelete
 
       - name: Delete Laravel Folder if it Exists 
-        command: "{{ item }}"
-        with_items:
-          - sudo rm -rf "{{ laravelFolder }}"
+        command: sudo rm -rf "{{ laravelFolder }}"
         when: laravelOpFolder.stat.exists
         register: lavDelete
       - debug: 
           var: lavDelete
+
+      - name: Create Laravel Folder if it Does Not Exist 
+        command: sudo mkdir "{{ laravelFolder }}"
+        when: not laravelOpFolder.stat.exists
+        register: lavCreate
+      - debug: 
+          var: lavCreate
 
 
       # - name: Copy Folder Containing the Files on Remote Server and Change ops.sh Executable Permission
@@ -61,8 +64,8 @@
       - debug:
           var: clone
 
-      - name: Pull Laravel Example Git Repo
-        command: cd ~/AltExam && git pull https://"{{ secret }}"@"{{ laravel-repo}}"
+      - name: Clone Laravel Example Git Repo
+        command: sudo git clone https://"{{ secret }}"@"{{ laravelRepo}}"
         register: pull
       - debug:
           var: pull
