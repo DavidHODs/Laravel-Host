@@ -94,9 +94,12 @@ function gitOp {
     sudo mv AltExam /var/www/html/ 
 }
 
-# function databaseSetUp {
-
-# }
+function databaseSetUp {
+    "mysql -u root -p <<_END_
+    CREATE DATABASE IF NOT EXISTS AltExam;
+    __END__
+    "
+ }
 
 # apacheConf formats the contents of apache conf file with the propoer host ip address
 function apacheConf {
@@ -114,7 +117,8 @@ function apacheOp {
     sudo chmod -R 775 /var/www/html/AltExam/storage
 
     sudo php artisan key:generate
-    sudo php artisan migrate *phpcli
+    sudo php artisan migrate 
+    sudo php artisan migrate --seed
 
     # checks if project conf file exists
     if [ -f /etc/apache2/sites-available/laravel_project.conf ]; then
