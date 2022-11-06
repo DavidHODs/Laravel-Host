@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+currentUser=$(whoami)
 
 # function to update all packages
 function packageInstall {
@@ -13,19 +14,15 @@ function databaseSetUp {
     sudo su - postgres -c \
     "psql <<__END__
 
-    SELECT 'crate the same user' ;
-        CREATE USER $USER ;
-        ALTER USER $USER CREATEDB;
+        CREATE USER $currentUser;
+        ALTER USER $currentUser CREATEDB;
 
-    SELECT 'grant him the priviledges' ;
-        grant all privileges on database postgres to $USER ;
+        grant all privileges on database postgres to $currentUser;
         alter user postgres password 'secret';
 
-    SELECT 'AND VERIFY' ;
         select * from information_schema.role_table_grants
-        where grantee='""$USER""' ;
+        where grantee='""$currentUser""' ;
 
-    SELECT 'INSTALL EXTENSIONS' ;
         CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";
         CREATE EXTENSION IF NOT EXISTS \"pgcrypto\";
         CREATE EXTENSION IF NOT EXISTS \"dblink\";

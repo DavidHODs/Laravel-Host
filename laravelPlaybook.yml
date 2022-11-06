@@ -76,7 +76,7 @@
           - git pull origin main
           - sudo mv $opsFolder $apFolder
         args:
-          chdir: $opsFolder
+          chdir: "{{ opsFolder }}"
 
         register: gitOp
       - debug: 
@@ -102,7 +102,7 @@
           - sudo php artisan migrate --seed
 
         args:
-          chdir: $apLaravelFolder
+          chdir: "{{ apLaravelFolder }}"
 
         register: apOp
       - debug: 
