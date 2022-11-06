@@ -38,7 +38,7 @@ function servicesIniation {
     sudo systemctl start apache2
     sudo systemctl status apache2
     sudo ufw allow 'Apache'
-    sudo systemctl start postgresql.service
+    sudo service mysqld start
     sudo systemctl status postgresql.service
 }
 

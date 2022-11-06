@@ -1,0 +1,129 @@
+#!/home/david/ansible/myansible/bin/ansible-playbook
+
+- name: AltSchool Examination Project
+  hosts: aws_ec2
+  become: true
+  become_user: ubuntu
+  vars:
+    opsFolder: ~/AltExam
+    apFolder: /var/www/html/
+    apLaravelFolder: /var/www/html/AltExam/
+    repo: github.com/DavidHODs/Laravel-Host.git
+    laravelRepo: github.com/DavidHODs/laravel-realworld-example-app.git
+    packages: ('git' 'apache2' 'php8.1' 'php8.1-mysql' 'php8.1-xml' 'php8.1-curl' 'mysql-server')
+    host_ip: $(hostname -i)
+    host: ${host_ip[0]}
+
+  tasks:
+    - block:
+      - name: Check if Recipient Folder Exists
+        stat:
+          path: "{{ opsFolder }}"
+        register: projectFolder
+      - debug: 
+          var: projectFolder.stat.exists
+
+      - name: Delete Project Folder if it Exists 
+        command: sudo rm -rf "{{ opsFolder }}"
+        when: projectFolder.stat.exists
+        register: dirDelete
+      - debug: 
+          var: dirDelete
+
+      - name: Create Project Folder if it does not Exist
+        command: mkdir "{{ opsFolder }}"
+        # when: not projectFolder.stat.exists
+        register: dirCreate
+      - debug: 
+          var: dirCreate
+
+      - name: Clone Laravel-Host Git Repo
+        command: git clone https://"{{ secret }}"@"{{ repo }}"
+        register: clone 
+      - debug:
+          var: clone
+
+      - name: Install Dependencies and Packages 
+        command: "{{ item }}"
+        with_items:
+          - sudo apt-get update -y 
+          - sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https 
+          - LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php 
+          - bash -lc sudo apt-get install ${packages[@]} -y
+          - sudo apt-get update -y
+          - mkdir ${opsFolder} 
+        register: tools
+      - debug: 
+          var: tools
+
+      - name: Services Initiation and Permissions
+        command: "{{ item }}"
+        with_items:
+          - sudo systemctl start apache2
+          - sudo systemctl status apache2
+          - sudo ufw allow 'Apache'
+          - sudo service mysqld start
+          - sudo systemctl status mysqld.service
+        register: checkService
+      - debug: 
+          var: checkService
+
+      - name: Git Operations
+        command: "{{ item }}"
+        with_items:
+          - git init 
+          - git remote add origin https://"{{ secret }}"@"{{ laravelRepo }}"
+          - git pull origin main
+          - sudo mv $opsFolder $apFolder
+        args:
+          chdir: $opsFolder
+
+        register: gitOp
+      - debug: 
+          var: gitOp
+
+      - name: Database SetUp
+        command: bash -lc "mysql -u root -p <<_END_ CREATE DATABASE IF NOT EXISTS AltExam; __END__"
+        register: dbSetUp
+      - debug: 
+          var: dbSetUp
+
+      - name: Apache Operations
+        command: "{{ item }}"
+        with_items:
+          - composer update
+          - composer create-project
+
+          - sudo chgrp -R www-data /var/www/html/AltExam/
+          - sudo chmod -R 775 /var/www/html/AltExam/storage
+
+          - sudo php artisan key:generate
+          - sudo php artisan migrate 
+          - sudo php artisan migrate --seed
+
+        args:
+          chdir: $apLaravelFolder
+
+        register: apOp
+      - debug: 
+          var: apOp
+
+      - name: Laravel Configuration
+        command: "{{ item }}"
+        with_items:
+          - export host=${host}
+          - envsubst '$host' < ~/Laravel-Host/conf.txt > ~/Laravel-Host/laravel_project.conf
+          - sudo cp ~/Laravel-Host/laravel_project.conf /etc/apache2/sites-available/
+          - sudo a2dissite 000-default.conf
+
+          - sudo a2ensite laravel_project
+
+          - sudo a2enmod rewrite
+          - sudo systemctl restart apache2
+
+        args:
+          chdir: /etc/apache2/sites-available
+
+        register: larConf
+      - debug: 
+          var: larConf
