@@ -1,0 +1,20 @@
+#!/home/david/ansible/myansible/bin/ansible-playbook
+
+- name: AltSchool Examination Project
+  hosts: aws_ec2
+  become: true
+  become_user: ubuntu
+  vars:
+    opsFile: ~/Laravel-Host/psql.sh
+
+  tasks:
+    - block:
+      - name: Change ops.sh Executable Permission
+        command: sudo chmod a+x "{{ opsFile }}"
+        register: chmod
+      - debug: var=chmod
+
+      - name: Run Operations
+        command: "{{ opsFile }}"
+        register: ops 
+      - debug: var=ops
