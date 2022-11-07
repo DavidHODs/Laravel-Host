@@ -4,9 +4,9 @@ currentUser=$(whoami)
 
 # function to update all packages
 function packageInstall {
-    sudo apt-get update -y
-    sudo apt install postgresql postgresql-contrib
-    sudo systemctl start postgresql.service 
+    # sudo apt-get update -y
+    # sudo apt install postgresql postgresql-contrib -y
+    # sudo systemctl start postgresql.service -y
 }
 
 
